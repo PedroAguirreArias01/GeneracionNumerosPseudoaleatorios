@@ -1,0 +1,15 @@
+package controller;
+/**
+ * 
+ * @author pedro
+ *
+ */
+public enum Acciones {
+	
+	CUADRADOS_MEDIOS, DIS_UNIFORME,
+	DIS_NORMAL, CONGRUENCIAS, CAL_CUDRADO, 
+	CAL_CONGRUENCIAS, CAL_DIS_NORMAL, 
+	CONGRUENCIA_MUULTIPLICATIVA, CAL_CONG_MULTI,
+	CAL_DIS_UNIFORME
+
+}
