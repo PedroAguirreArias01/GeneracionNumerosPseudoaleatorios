@@ -51,7 +51,7 @@ public class PanelDisUniforme extends JPanel {
 		JPanel panel = new JPanel();
 		panel.setLayout(new GridLayout(1, 5));
 		panel.setBorder(BorderFactory.createTitledBorder("Distribución. Uniforme"));
-		this.add(panel, BorderLayout.NORTH);
+		this.add(panel, BorderLayout.CENTER);
 
 		JLabel semiJLabel = new JLabel("Cantidad números");
 		panel.add(semiJLabel);
@@ -72,31 +72,12 @@ public class PanelDisUniforme extends JPanel {
 		panel.add(semiJLabel3);
 		this.numeroIntervalos = new JTextField();
 		panel.add(numeroIntervalos);
-
+		
 		JButton jButton = new JButton("Calcular");
 		jButton.addActionListener(controller);
 		jButton.setActionCommand(Acciones.CAL_DIS_UNIFORME.name());
 		panel.add(jButton);
-		
-		JPanel panel2 = new JPanel();
-		panel2.setLayout(new GridLayout(1, 5));
-		panel2.setBorder(BorderFactory.createTitledBorder("Pruebas de disperción y uniformidaad"));
-		this.add(panel2, BorderLayout.SOUTH);
-		
-		JButton jButtonMedias = new JButton("Prueba medias");
-		panel2.add(jButtonMedias);
-		
-		JButton jButtonVarianza = new JButton("Prueba de Varianza");
-		panel2.add(jButtonVarianza);
-		
-		JButton jButtonChi2 = new JButton("Prueba Chi2");
-		panel2.add(jButtonChi2);
-		
-		JButton jButtonKS = new JButton("Prueba KS");
-		panel2.add(jButtonKS);
-		
-		JButton jButtonPoker = new JButton("Prueba de Poker");
-		panel2.add(jButtonPoker);
+
 	}
 
 	public void vectores(Object xi[], Object ri[], Object ni[], Object no[], Object interInicial[], Object interfinal[],

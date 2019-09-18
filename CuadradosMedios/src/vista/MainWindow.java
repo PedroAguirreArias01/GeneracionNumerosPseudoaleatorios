@@ -1,9 +1,14 @@
 package vista;
 
 import java.awt.BorderLayout;
+import java.awt.GridLayout;
 
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
+import controller.Acciones;
 import controller.Controller;
 /**
  * 
@@ -21,6 +26,7 @@ public class MainWindow extends JFrame{
 	private PanelDisNormal panelDisNormal;
 	private PanelDisUniforme panelDisUniforme;
 	private PanelCongruenciaMultiplicativa panelMultiplicativa;
+	private JPanel panelPruebas;
 	
 	public MainWindow(Controller controller) {
 		
@@ -35,6 +41,27 @@ public class MainWindow extends JFrame{
 		panelDisNormal = new PanelDisNormal(controller);
 		panelDisUniforme = new PanelDisUniforme(controller);
 		panelMultiplicativa = new PanelCongruenciaMultiplicativa(controller);
+
+		this.panelPruebas = new JPanel();
+		this.panelPruebas.setLayout(new GridLayout(1, 5));
+		this.panelPruebas.setBorder(BorderFactory.createTitledBorder("Pruebas de disperción y uniformidaad"));
+		this.panelPruebas.setVisible(true);
+		this.add(panelPruebas, BorderLayout.SOUTH);
+		
+		JButton jButtonMedias = new JButton("Prueba medias");
+		panelPruebas.add(jButtonMedias);
+		
+		JButton jButtonVarianza = new JButton("Prueba de Varianza");
+		panelPruebas.add(jButtonVarianza);
+		
+		JButton jButtonChi2 = new JButton("Prueba Chi2");
+		panelPruebas.add(jButtonChi2);
+		
+		JButton jButtonKS = new JButton("Prueba KS");
+		panelPruebas.add(jButtonKS);
+		
+		JButton jButtonPoker = new JButton("Prueba de Poker");
+		panelPruebas.add(jButtonPoker);
 		
 		this.setVisible(true);
 	}
