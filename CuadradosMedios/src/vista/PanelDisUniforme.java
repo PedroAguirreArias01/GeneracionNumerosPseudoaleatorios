@@ -15,6 +15,7 @@ import javax.swing.table.DefaultTableModel;
 
 import controller.Acciones;
 import controller.Controller;
+
 /**
  * 
  * @author pedro
@@ -76,9 +77,30 @@ public class PanelDisUniforme extends JPanel {
 		jButton.addActionListener(controller);
 		jButton.setActionCommand(Acciones.CAL_DIS_UNIFORME.name());
 		panel.add(jButton);
+		
+		JPanel panel2 = new JPanel();
+		panel2.setLayout(new GridLayout(1, 5));
+		panel2.setBorder(BorderFactory.createTitledBorder("Pruebas de disperción y uniformidaad"));
+		this.add(panel2, BorderLayout.SOUTH);
+		
+		JButton jButtonMedias = new JButton("Prueba medias");
+		panel2.add(jButtonMedias);
+		
+		JButton jButtonVarianza = new JButton("Prueba de Varianza");
+		panel2.add(jButtonVarianza);
+		
+		JButton jButtonChi2 = new JButton("Prueba Chi2");
+		panel2.add(jButtonChi2);
+		
+		JButton jButtonKS = new JButton("Prueba KS");
+		panel2.add(jButtonKS);
+		
+		JButton jButtonPoker = new JButton("Prueba de Poker");
+		panel2.add(jButtonPoker);
 	}
 
-	public void vectores(Object xi[], Object ri[],Object ni[],Object no[], Object interInicial[], Object interfinal[], Object freObtenida[], Object freEsper[]) {
+	public void vectores(Object xi[], Object ri[], Object ni[], Object no[], Object interInicial[], Object interfinal[],
+		Object freObtenida[], Object freEsper[]) {
 		defaultTableModel = new DefaultTableModel();
 		disUniforme.setModel(defaultTableModel);
 		this.defaultTableModel.addColumn("#", xi);
@@ -90,41 +112,41 @@ public class PanelDisUniforme extends JPanel {
 		this.defaultTableModel.addColumn("Fre. Obtenida", freObtenida);
 		this.defaultTableModel.addColumn("Fre. Esperada", freEsper);
 	}
-	
+
 	public int cantidadNumeros() {
 		if (cantidadNumeros.getText().equals("")) {
 			JOptionPane.showMessageDialog(this, "Debe Agregar Una Cantidad de numeros a generar");
-		}else {
+		} else {
 			return Integer.valueOf(cantidadNumeros.getText());
 		}
 		return 0;
 	}
-	
+
 	public int interInicial() {
 		if (intervaloInicial.getText().equals("")) {
 			JOptionPane.showMessageDialog(this, "Debe Agregar un intevalo inicial");
-		}else {
+		} else {
 			return Integer.valueOf(intervaloInicial.getText());
 		}
 		return 0;
 	}
-	
+
 	public int interFinal() {
 		if (intervaloFinal.getText().equals("")) {
 			JOptionPane.showMessageDialog(this, "Debe Agregar un intervalo final");
-		}else {
+		} else {
 			return Integer.valueOf(intervaloFinal.getText());
 		}
 		return 0;
 	}
-	
+
 	public int numIntervalos() {
 		if (numeroIntervalos.getText().equals("")) {
 			JOptionPane.showMessageDialog(this, "Debe Agregar un número de intervalos a generar");
-		}else {
+		} else {
 			return Integer.valueOf(numeroIntervalos.getText());
 		}
 		return 0;
 	}
-	
+
 }
